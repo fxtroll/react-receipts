@@ -17,6 +17,10 @@ export default function App() {
       </div>
 
       <div className="card-container">
+        {Receipts.map(receipt => {
+          // need both to be true to print receipt, (short circuiting)
+          receipt.paid && receipt.person.includes(search) && <Card receipt={receipt} />
+        })}
 
       </div>
     </div>
